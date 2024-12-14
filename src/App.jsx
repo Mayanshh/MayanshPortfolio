@@ -17,9 +17,9 @@ function App() {
   // Preload all assets (images, videos, models, etc.)
   const preloadAssets = async () => {
     const resources = [
-      '/path/to/image1.jpg',
-      '/path/to/video.mp4',
-      '/path/to/image2.png',
+      './assets/jellyfish.glb',
+      './assets/bgVid.mp4',
+      './assets/image.png',
       // Add more assets as needed
     ];
 
