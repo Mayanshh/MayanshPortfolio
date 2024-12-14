@@ -1,9 +1,12 @@
 {
+    "homepage":"https://Mayanshh/github.io/MayanshPortfolio",
   "name": "circular",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
@@ -18,6 +21,7 @@
     "@react-three/fiber": "^8.17.10",
     "@react-three/postprocessing": "^2.16.3",
     "@types/three": "^0.169.0",
+    "gh-pages": "^6.2.0",
     "gsap": "^3.12.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
