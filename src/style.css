@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=League+Gothic&family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shadows+Into+Light&display=swap');
+
+@font-face {
+  font-family: 'Nervada';
+  src: url('../fonts/al-nervada.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Moglan';
+  src: url('../fonts/moglan.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body,html,#root{
+  height:100%;
+  width:100%;
+  background-color:#000;
+  scroll-behavior: smooth;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+#root{
+  position:fixed;
+  overflow-x:hidden;
+  overflow-y:scroll;
+}
+#page1{
+  height:80vh;
+  width:100vw;
+  background:linear-gradient(to right, #000, transparent,transparent);
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:100;
+}
+
+/* Menu Container */
+#nav {
+  position: relative;
+  padding: 1em;
+  background-color: #333;
+  color:white;
+  text-align: center;
+  top:0;
+  left:0;
+  padding:10px;
+    height:50px;
+    width:95vw;
+    background:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    text-align:center;
+}
+
+#text {
+  margin: 0;
+  font-size: 1.5em;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hamburger Button */
+.hamburger {
+  cursor: pointer;
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  height: 3em;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+/* Menu Links */
+.menu-links {
+  position: absolute;
+  top: 4em;
+  right:-30px;
+  background-color: white;
+  color: white;
+  width: 80vw;
+  height:81vh;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-links.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  height:70%;
+  width:70%;
+}
+
+.menu-links li {
+  margin: 1em 0;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #232323;
+  font-size: 1.5em;
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  transition: color 0.3s ease;
+}
+
+.menu-links a:hover {
+  color: #ffcc00
+}
+
+#textBox{
+  height:50vw;
+  width:50vw;
+  margin-top:30vh;
+  margin-left:20px;
+}
+#title{
+  color:#fff;
+  font-family: "Moglan", sans-serif;
+  font-size:2.5em;
+  height:fit-content;
+  width:fit-content;
+  white-space: nowrap;
+}
+#info{
+  color:#fff;
+  font-family: "Bebas Neue", serif;
+  font-size:1em;
+  height:fit-content;
+  width:fit-content;
+}
+#btn{
+  height:30px;
+  width:100px;
+  border:none;
+  border-radius:50px;
+  background-color:#ffcc00;
+  color:#000;
+  font-family: "Moglan", serif;
+  font-size:1em;
+  cursor:pointer;
+  margin-top:20px;
+}
+#underline{
+  height:.5px;
+  width:100%;
+  margin-bottom:10px;
+  background-color:#ffcc00;
+}
+#page2{
+  position:relative;
+  height:100vh;
+  width:100vw;
+  background-color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:-80px;
+  perspective: 1000px;
+}
+/*#page3{
+  height:100vh;
+  width:100vw;
+  background-color:#e22400;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}*/
+
+#pages{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+.animatedText{
+  white-space: nowrap;
+  font-family: "League Gothic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  font-size:32vw;
+  letter-spacing:-8px;
+  text-align:left;
+  height:fit-content;
+  width:fit-content;
+  perspective:preserve-3d;
+  transform-origin:100% 100%;
+}
+
+#page3 {
+  position:relative;
+  height: 100vh;
+  width:100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*
+  background-image: url(../assets/bg.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;*/
+  padding: 20px;
+}
+.background-video {
+    position: absolute; /* Make the video cover the entire background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area */
+    z-index: -1; /* Send the video behind other content */
+}
+#aboutPara{
+  height: fit-content;
+  width:80vw;
+  border-radius:20px;
+  border:none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background:transparent;
+  backdrop-filter:blur(0px);
+  -webkit-backdrop-filter:blur(0px);
+  padding: 20px;
+  margin-top:50px;
+  /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);*/
+}
+.lines {
+  font-family: "League Gothic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size:1.9em;
+  height:fit-content;
+  width:fit-content;
+  color: #000000;/* Initial color before animation */
+  opacity:0.3;
+  text-align: left;
+  display: inline-block;
+  margin-right: 10px;
+  line-height: -5px;
+  padding-top:-5px;
+}
+#about{
+  font-family: "Moglan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size:2.2em;
+  height:fit-content;
+  width:fit-content;
+  color: #ffcc00; /* Initial color before animation */
+  text-align: left;
+  display: inline-block;
+  position:absolute;
+  top:3.5%;
+  left:8.5%;
+  margin-left:0px;
+  margin-top:50px;
+}
+#line1{
+  margin-top:35px;
+}
+
+#model {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  width: 200px;
+  opacity: 1;
+}
+
+#page4{
+  height:200vh;
+  width:100vw;
+  background-color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+#page5{
+  height:100vh;
+  width:100vw;
+  background-color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-direction:column;
+}
+#contactMe{
+  height:50%;
+  width:100%;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  flex-direction:column;
+  gap:35px;
+}
+#contactMe h1{
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  height:fit-content;
+  width:fit-content;
+  color: #ffcc00; /* Initial color before animation */
+  text-align: left;
+  display: inline-block;
+  margin-left:10px;
+  margin-top:10px;
+}
+#contactMe p{
+  font-family: "Moglan", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size:2rem;
+  height:fit-content;
+  width:fit-content;
+  color: #fff; /* Initial color before animation */
+  text-align: left;
+  display: inline-block;
+  margin-left:10px;
+  margin-top:10px;
+}
+.card > *{
+  transition: all 0.3s ease-in-out;
+}
+.card .card-category{
+  font-family: "Bebas Neue", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.card{
+  margin-top:50px;
+}
+.card .card-title{
+  font-family: "Nervada", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+#titleProject{
+  font-family: "Moglan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size:2.2em;
+  margin-top:50px;
+  color:#fff;
+  text-align:left;
+  color:#ffcc00;
+}
+
+/*contact section css code here*/
+
+.page5-container {
+  background-color: #232323;
+  color: #d1d1d1;
+  font-family: "Arial", sans-serif;
+  padding: 40px 20px;
+  text-align: left;
+  position: relative;
+  height:50%;
+  width:100%;
+}
+
+.section-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin-bottom:35px;
+}
+
+.contact-detail,
+.social-links {
+  margin-top:20px;
+  font-size: 1rem;
+  margin: 5px 0;
+  color: #858585;
+  text-decoration:none;
+}
+.social-links a{
+  text-decoration:none;
+  color: #858585;
+}
+.contact-detail:hover{
+  color:#ffcc00;
+}
+.social-section{
+  margin-top:35px;
+}
+.social-links a:hover{
+  color:#ffcc00;
+}
+.say-hello-button {
+  margin: 35px 100px;
+  background-color: #ffffff;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #474747;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  outline:none;
+}
+
+.say-hello-button:hover {
+  background-color: #5c5c5c;
+  color:#ffcc00;
+}
+
+.footer {
+  position:relative;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  flex-direction:column;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #707070;
+  font-size:.8em;
+  height:10vh;
+  width:100%;
+}
+#cpy-txt{
+  margin-top:10px;
+}
+.footer strong {
+  color: #ffffff;
+}
+
+.scroll-up {
+  position: absolute;
+  right: 5%;
+  bottom: 25%;
+  background-color: #2e2e2e;
+  border:.5px solid #fff;;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-up:hover {
+  background-color: #444444;
+}
+
+
+
+
+
+
+
+
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000; /* Black background for contrast */
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; /* Ensure loader is above everything */
+}
+
+.loader-text {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.loader-text{
+  font-family: "Bebas Neue", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size:2.2em;
+}
